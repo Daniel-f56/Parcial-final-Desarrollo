@@ -144,10 +144,16 @@
                 </div>
                 <div class="row pt-1 px-4">
                     <div class="mb-3">
-                        <label class="form-label letra-texto">Ingrese su nombre:</label>
-                        <input type="email" class="form-control form-control-lg rounded-4" placeholder="Nombre Completo">
-                      </div>
-                </div>
+                      <label class="form-label letra-texto">Ingrese su nombre:</label>
+                      <input 
+                        type="text" 
+                        id="nombreInput" 
+                        class="form-control form-control-lg rounded-4" 
+                        placeholder="Nombre Completo" 
+                        autocomplete="off">
+                      <ul id="nombreSuggestions" class="suggestions-list"></ul>
+                    </div>
+                  </div>
                 <div class="row pt-1 px-4">
                     <div class="mb-3">
                         <label class="form-label letra-texto">Ingrese su fecha de nacimiento:</label>
@@ -184,7 +190,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label letra-texto">Teléfono del cónyuge/compañero:</label>
-                        <input type="tel" class="form-control form-control-lg rounded-4" placeholder="Teléfono del cónyuge/compañero">
+                        <input type="number" class="form-control form-control-lg rounded-4" placeholder="Teléfono del cónyuge/compañero">
                     </div>
                 </div>
 
