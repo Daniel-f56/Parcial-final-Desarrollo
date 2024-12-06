@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-<<<<<<< HEAD
+// HEAD
 // Resumen final
 document.addEventListener("DOMContentLoaded", () => {
     const resumenFinal = document.getElementById("resumenFinal");
@@ -219,17 +219,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Evento para editar datos
-    editarDatos.addEventListener("click", () => {
-        resumenFinal.style.display = "none";
-        document.documentElement.scrollTop = 0; // Ir al inicio del formulario
-    });
+    // // Evento para editar datos
+    // editarDatos.addEventListener("click", () => {
+    //     resumenFinal.style.display = "none";
+    //     document.documentElement.scrollTop = 0; // Ir al inicio del formulario
+    // });
 
-    // Evento para enviar el formulario
-    enviarFormulario.addEventListener("click", () => {
-        alert("Formulario enviado con éxito.");
-        // Aquí puedes agregar lógica para enviar los datos, por ejemplo, con fetch
-    });
+    // // Evento para enviar el formulario
+    // enviarFormulario.addEventListener("click", () => {
+    //     alert("Formulario enviado con éxito.");
+    //     // Aquí puedes agregar lógica para enviar los datos, por ejemplo, con fetch
+    // });
 });
 
 
@@ -253,7 +253,7 @@ setInterval(actualizarReloj, 1000);
 // Ejecutar inmediatamente al cargar la página para mostrar la hora inicial
 document.addEventListener("DOMContentLoaded", actualizarReloj);
 
-=======
+
 //Componente dinamico Auto-completar sugerencias
 document.addEventListener("DOMContentLoaded", () => {
     const nombreInput = document.getElementById("nombreInput");
@@ -302,4 +302,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
->>>>>>> 5dd9409f11c70aee5fe7d62e1faca42b1335ea8f
+
