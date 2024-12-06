@@ -172,3 +172,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializar el progreso al cargar la página
     updateProgress();
 });
+
+
+//Componente dinamico Auto-completar sugerencias
+document.addEventListener("DOMContentLoaded", () => {
+    const nombreInput = document.getElementById("nombreInput");
+    const nombreSuggestions = document.getElementById("nombreSuggestions");
+  
+    // Lista de nombres comunes en Colombia
+    const nombresComunes = [
+      "Juan", "María", "Carlos", "Laura", "Andrés", "Camila", 
+      "Alejandro", "Sofía", "Daniel", "Valentina", "Luis", 
+      "Paula", "Jorge", "Gabriela", "Sebastián", "Natalia", 
+      "Miguel", "Diana", "Santiago", "Isabela", "Steven", "Jose",
+       "Diego", "Cristian", "Antonio", "Eduardo", "Ricardo", "Vannesa",
+       "Catalina", "Sandra", "Lina", "Juliana", "Oscar", "Luisa",
+    ];
+  
+    // Manejador de entrada del usuario
+    nombreInput.addEventListener("input", () => {
+      const query = nombreInput.value.toLowerCase();
+      nombreSuggestions.innerHTML = "";
+  
+      if (query) {
+        const nombresFiltrados = nombresComunes.filter((nombre) =>
+          nombre.toLowerCase().startsWith(query)
+        );
+  
+        // Mostrar las sugerencias
+        nombresFiltrados.forEach((nombre) => {
+          const li = document.createElement("li");
+          li.textContent = nombre;
+  
+          // Autocompletar al hacer clic
+          li.addEventListener("click", () => {
+            nombreInput.value = nombre;
+            nombreSuggestions.innerHTML = ""; // Limpiar sugerencias
+          });
+  
+          nombreSuggestions.appendChild(li);
+        });
+      }
+    });
+  
+    // Ocultar las sugerencias si se hace clic fuera del campo
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".mb-3")) {
+        nombreSuggestions.innerHTML = "";
+      }
+    });
+  });
