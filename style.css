@@ -1,0 +1,33 @@
+body{
+    background-color: #3f3f73;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fondo-contenedor{
+    background-color: #eaa831;
+    border-radius: 10px;
+}
+
+.borde-menu{
+    border-radius: 10px;
+}
+
+.letra-menu{
+    font-size: 1.5rem;
+}
+
+.letra-texto{
+    font-size: 1.2rem;
+}
+
+.letra-subtitulo{
+    font-size: 2rem;
+}
+
+.letra-tabla{
+    font-size: 3rem;
+}
+
+.tamaño-input{
+    max-width: 1000px;
+}
