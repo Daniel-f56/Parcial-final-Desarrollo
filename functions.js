@@ -130,19 +130,17 @@ window.addEventListener('DOMContentLoaded', cargarDepartamentos);
 
 // Barra de progreso
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleccionar todos los inputs y selects dentro del formulario
     const inputs = document.querySelectorAll(
         "input, select"
-    ); // Todos los campos del formulario
+    ); 
     const progressBar = document.getElementById("progressBar");
 
     // Función para calcular el progreso
     function updateProgress() {
-        const totalFields = inputs.length; // Total de campos interactivos
+        const totalFields = inputs.length; 
         let filledFields = 0;
 
         inputs.forEach((element) => {
-            // Contar los campos completados
             if (
                 element.value.trim() !== "" &&
                 element.value !== "Seleccione:" &&
@@ -156,19 +154,101 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Calcular el porcentaje de progreso
         const progress = Math.round((filledFields / totalFields) * 100);
-        progressBar.style.width = progress + "%"; // Ajustar el ancho de la barra
-        progressBar.setAttribute("aria-valuenow", progress); // Actualizar el atributo accesible
-        progressBar.textContent = progress + "% completado"; // Mostrar el porcentaje
+        progressBar.style.width = progress + "%"; 
+        progressBar.setAttribute("aria-valuenow", progress); 
+        progressBar.textContent = progress + "% completado"; 
     }
 
-    // Agregar eventos de actualización a todos los campos
     inputs.forEach((element) => {
         element.addEventListener("input", updateProgress);
-        element.addEventListener("change", updateProgress); // Para selects
+        element.addEventListener("change", updateProgress); 
     });
 
-    // Inicializar el progreso al cargar la página
+    
     updateProgress();
 });
+
+
+// Resumen final
+document.addEventListener("DOMContentLoaded", () => {
+    const resumenFinal = document.getElementById("resumenFinal");
+    const datosResumen = document.getElementById("datosResumen");
+    const enviarFormulario = document.getElementById("enviarFormulario");
+    const editarDatos = document.getElementById("editarDatos");
+
+    const inputs = document.querySelectorAll("input, select");
+
+    // Función para mostrar el resumen final
+    function mostrarResumen() {
+        datosResumen.innerHTML = ""; // Limpiar el resumen anterior
+        inputs.forEach((input) => {
+            const label = input.closest(".row").querySelector(".form-label")?.textContent || "Campo:";
+            const valor = input.value;
+
+            // Ignorar campos vacíos
+            if (
+                valor &&
+                valor !== "Seleccione:" &&
+                valor !== "Sexo:" &&
+                valor !== "Estado civil:" &&
+                valor !== "Tipo de documento:" &&
+                valor !== "Seleccione un departamento:" &&
+                valor !== "Seleccione una ciudad:"
+            ) {
+                const resumenItem = `
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                        <strong>${label}</strong>
+                        <span>${valor}</span>
+                    </div>`;
+                datosResumen.insertAdjacentHTML("beforeend", resumenItem);
+            }
+        });
+
+        resumenFinal.style.display = "block"; // Mostrar el resumen
+    }
+
+    // Evento al completar el formulario (100% progreso)
+    document.getElementById("progressBar").addEventListener("DOMSubtreeModified", () => {
+        const progress = document.getElementById("progressBar").getAttribute("aria-valuenow");
+        if (progress === "100") {
+            mostrarResumen();
+        } else {
+            resumenFinal.style.display = "none"; // Ocultar si no está completo
+        }
+    });
+
+    // Evento para editar datos
+    editarDatos.addEventListener("click", () => {
+        resumenFinal.style.display = "none";
+        document.documentElement.scrollTop = 0; // Ir al inicio del formulario
+    });
+
+    // Evento para enviar el formulario
+    enviarFormulario.addEventListener("click", () => {
+        alert("Formulario enviado con éxito.");
+        // Aquí puedes agregar lógica para enviar los datos, por ejemplo, con fetch
+    });
+});
+
+
+// Función para actualizar el reloj
+function actualizarReloj() {
+    const reloj = document.getElementById("reloj"); // Elemento donde se mostrará el reloj
+    const ahora = new Date(); // Obtener la hora actual
+
+    // Formatear horas, minutos y segundos para que siempre tengan dos dígitos
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    const segundos = String(ahora.getSeconds()).padStart(2, '0');
+
+    // Mostrar la hora formateada
+    reloj.textContent = `${horas}:${minutos}:${segundos}`;
+}
+
+// Ejecutar la función cada segundo
+setInterval(actualizarReloj, 1000);
+
+// Ejecutar inmediatamente al cargar la página para mostrar la hora inicial
+document.addEventListener("DOMContentLoaded", actualizarReloj);
+
