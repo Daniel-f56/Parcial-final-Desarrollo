@@ -123,3 +123,52 @@ async function cargarDepartamentos() {
 }
 
 window.addEventListener('DOMContentLoaded', cargarDepartamentos);
+
+
+
+
+
+// Barra de progreso
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleccionar todos los inputs y selects dentro del formulario
+    const inputs = document.querySelectorAll(
+        "input, select"
+    ); // Todos los campos del formulario
+    const progressBar = document.getElementById("progressBar");
+
+    // Función para calcular el progreso
+    function updateProgress() {
+        const totalFields = inputs.length; // Total de campos interactivos
+        let filledFields = 0;
+
+        inputs.forEach((element) => {
+            // Contar los campos completados
+            if (
+                element.value.trim() !== "" &&
+                element.value !== "Seleccione:" &&
+                element.value !== "Sexo:" &&
+                element.value !== "Estado civil:" &&
+                element.value !== "Tipo de documento:" &&
+                element.value !== "Seleccione un departamento:" &&
+                element.value !== "Seleccione una ciudad:"
+            ) {
+                filledFields++;
+            }
+        });
+
+        // Calcular el porcentaje de progreso
+        const progress = Math.round((filledFields / totalFields) * 100);
+        progressBar.style.width = progress + "%"; // Ajustar el ancho de la barra
+        progressBar.setAttribute("aria-valuenow", progress); // Actualizar el atributo accesible
+        progressBar.textContent = progress + "% completado"; // Mostrar el porcentaje
+    }
+
+    // Agregar eventos de actualización a todos los campos
+    inputs.forEach((element) => {
+        element.addEventListener("input", updateProgress);
+        element.addEventListener("change", updateProgress); // Para selects
+    });
+
+    // Inicializar el progreso al cargar la página
+    updateProgress();
+});
