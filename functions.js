@@ -219,17 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // // Evento para editar datos
-    // editarDatos.addEventListener("click", () => {
-    //     resumenFinal.style.display = "none";
-    //     document.documentElement.scrollTop = 0; // Ir al inicio del formulario
-    // });
-
-    // // Evento para enviar el formulario
-    // enviarFormulario.addEventListener("click", () => {
-    //     alert("Formulario enviado con éxito.");
-    //     // Aquí puedes agregar lógica para enviar los datos, por ejemplo, con fetch
-    // });
 });
 
 
@@ -303,3 +292,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
+
+
+
+  // Lógica para manejar el envío del formulario
+submitButton.addEventListener('click', function () {
+    // Verificación de campos obligatorios
+    if (!nombreInput.value || !sexoSelect.value || !estadoCivilSelect.value || !tieneHijosSelect.value || !departamentoSelect.value || !ciudadSelect.value) {
+        Swal.fire('Por favor, complete todos los campos antes de enviar el formulario.');
+        return;
+    }
+
+    // Si todo está bien, mostrar mensaje de éxito
+    Swal.fire({
+        title: '¡Formulario enviado con éxito!',
+        icon: 'success',
+        confirmButtonText: 'Cerrar',
+    });
+
+});

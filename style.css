@@ -12,8 +12,17 @@ body {
 }
 
 .fondo-contenedor {
-    background-color: #6c9bcf;
+    background-color: #a8dadc;
     border-radius: 10px;
+}
+
+.header-principal {
+    background-color: #a8dadc;
+    border-radius: 10px;
+}
+
+.logo-header:hover {
+    cursor: pointer;
 }
 
 .menu-link {
