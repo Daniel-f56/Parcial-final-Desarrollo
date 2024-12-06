@@ -1,0 +1,130 @@
+[
+    {
+        "nombre": "Amazonas",
+        "ciudades": ["Leticia", "Puerto Nariño"]
+    },
+    {
+        "nombre": "Antioquia",
+        "ciudades": ["Medellín", "Bello", "Itagüí", "Envigado", "Rionegro", "Turbo", "Apartadó", "La Ceja", "Sabaneta", "Caucasia"]
+    },
+    {
+        "nombre": "Arauca",
+        "ciudades": ["Arauca", "Tame", "Saravena", "Arauquita", "Fortul"]
+    },
+    {
+        "nombre": "Atlántico",
+        "ciudades": ["Barranquilla", "Soledad", "Malambo", "Puerto Colombia", "Galapa", "Baranoa", "Sabanalarga"]
+    },
+    {
+        "nombre": "Bolívar",
+        "ciudades": ["Cartagena", "Magangué", "Turbaco", "Arjona", "El Carmen de Bolívar", "Mompox"]
+    },
+    {
+        "nombre": "Boyacá",
+        "ciudades": ["Tunja", "Sogamoso", "Duitama", "Chiquinquirá", "Puerto Boyacá", "Villa de Leyva", "Paipa"]
+    },
+    {
+        "nombre": "Caldas",
+        "ciudades": ["Manizales", "Villamaría", "Chinchiná", "Riosucio", "La Dorada", "Anserma", "Aguadas"]
+    },
+    {
+        "nombre": "Caquetá",
+        "ciudades": ["Florencia", "San Vicente del Caguán", "Puerto Rico", "El Doncello", "Morelia"]
+    },
+    {
+        "nombre": "Casanare",
+        "ciudades": ["Yopal", "Aguazul", "Villanueva", "Monterrey", "Paz de Ariporo"]
+    },
+    {
+        "nombre": "Cauca",
+        "ciudades": ["Popayán", "Santander de Quilichao", "Puerto Tejada", "El Tambo", "Guapi"]
+    },
+    {
+        "nombre": "Cesar",
+        "ciudades": ["Valledupar", "Aguachica", "Agustín Codazzi", "Bosconia", "El Copey"]
+    },
+    {
+        "nombre": "Chocó",
+        "ciudades": ["Quibdó", "Istmina", "Condoto", "Acandí", "Bahía Solano"]
+    },
+    {
+        "nombre": "Córdoba",
+        "ciudades": ["Montería", "Lorica", "Sahagún", "Cereté", "Montelíbano"]
+    },
+    {
+        "nombre": "Cundinamarca",
+        "ciudades": ["Bogotá", "Soacha", "Chía", "Zipaquirá", "Girardot", "Facatativá"]
+    },
+    {
+        "nombre": "Guainía",
+        "ciudades": ["Inírida"]
+    },
+    {
+        "nombre": "Guaviare",
+        "ciudades": ["San José del Guaviare", "Calamar", "El Retorno"]
+    },
+    {
+        "nombre": "Huila",
+        "ciudades": ["Neiva", "Pitalito", "Garzón", "La Plata", "Campoalegre"]
+    },
+    {
+        "nombre": "La Guajira",
+        "ciudades": ["Riohacha", "Maicao", "Uribia", "Fonseca", "San Juan del Cesar"]
+    },
+    {
+        "nombre": "Magdalena",
+        "ciudades": ["Santa Marta", "Ciénaga", "Fundación", "Aracataca", "El Banco"]
+    },
+    {
+        "nombre": "Meta",
+        "ciudades": ["Villavicencio", "Acacías", "Granada", "Puerto López", "San Martín"]
+    },
+    {
+        "nombre": "Nariño",
+        "ciudades": ["Pasto", "Ipiales", "Tumaco", "Túquerres", "La Unión"]
+    },
+    {
+        "nombre": "Norte de Santander",
+        "ciudades": ["Cúcuta", "Ocaña", "Pamplona", "Villa del Rosario", "Los Patios"]
+    },
+    {
+        "nombre": "Putumayo",
+        "ciudades": ["Mocoa", "Puerto Asís", "Orito", "Sibundoy", "San Francisco"]
+    },
+    {
+        "nombre": "Quindio",
+        "ciudades": ["Armenia", "Montenegro", "La Tebaida", "Calarcá", "Salento"]
+    },
+    {
+        "nombre": "Risaralda",
+        "ciudades": ["Pereira", "Dosquebradas", "Santa Rosa de Cabal", "La Virginia", "Marsella"]
+    },
+    {
+        "nombre": "San Andres y Providencia",
+        "ciudades": ["San Andrés", "Providencia"]
+    },
+    {
+        "nombre": "Santander",
+        "ciudades": ["Bucaramanga", "Floridablanca", "Piedecuesta", "Barrancabermeja", "Girón"]
+    },
+    {
+        "nombre": "Sucre",
+        "ciudades": ["Sincelejo", "Corozal", "San Marcos", "Sampués", "Tolú"]
+    },
+    {
+        "nombre": "Tolima",
+        "ciudades": ["Ibagué", "Espinal", "Melgar", "Honda", "Líbano"]
+    },
+    {
+        "nombre": "Valle del Cauca",
+        "ciudades": ["Cali", "Palmira", "Buenaventura", "Tuluá", "Cartago"]
+    },
+    {
+        "nombre": "Vaupés",
+        "ciudades": ["Mitú"]
+    },
+    {
+        "nombre": "Vichada",
+        "ciudades": ["Puerto Carreño", "La Primavera", "Cumaribo"]
+    }
+]

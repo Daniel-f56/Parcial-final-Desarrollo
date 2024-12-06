@@ -79,3 +79,47 @@ document.getElementById('estadoCivil').addEventListener('change', function () {
          mensajeSubsidio.style.display = 'none';
      }
  });
+
+ //  Departamentos desde el json
+async function cargarDepartamentos() {
+    try {
+        const response = await fetch('departamentos.json');
+        const departamentos = await response.json();
+
+        const selectDepartamentos = document.getElementById('departamentos');
+        const selectCiudades = document.getElementById('ciudades');
+
+        departamentos.forEach(departamento => {
+            const option = document.createElement('option');
+            option.value = departamento.nombre;
+            option.textContent = departamento.nombre;
+            selectDepartamentos.appendChild(option);
+        });
+
+        // Evento para actualizar ciudades al seleccionar un departamento
+        selectDepartamentos.addEventListener('change', () => {
+            const departamentoSeleccionado = selectDepartamentos.value;
+
+            // Limpiar ciudades anteriores
+            selectCiudades.innerHTML = '<option selected>Seleccione una ciudad:</option>';
+
+            // Buscar ciudades del departamento seleccionado
+            const departamento = departamentos.find(
+                d => d.nombre === departamentoSeleccionado
+            );
+
+            if (departamento) {
+                departamento.ciudades.forEach(ciudad => {
+                    const option = document.createElement('option');
+                    option.value = ciudad;
+                    option.textContent = ciudad;
+                    selectCiudades.appendChild(option);
+                });
+            }
+        });
+    } catch (error) {
+        console.error('Error cargando los departamentos:', error);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', cargarDepartamentos);
